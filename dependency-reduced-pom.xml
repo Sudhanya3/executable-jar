@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.sid</groupId>
-  <artifactId>executable-jar-with-maven-example</artifactId>
+  <artifactId>executable-jar</artifactId>
   <name>${project.artifactId}</name>
   <version>0.8.10-SNAPSHOT</version>
   <description>An example for generating executable jar files with dependencies</description>
@@ -165,7 +165,7 @@
                 <configuration>
                   <mainClass>com.github.sid.example.Main</mainClass>
                   <attachToBuild>true</attachToBuild>
-                  <filename>executable-jar-with-maven-example-0.8.10-SNAPSHOT-onejar.jar</filename>
+                  <filename>executable-jar-0.8.10-SNAPSHOT-onejar.jar</filename>
                 </configuration>
               </execution>
             </executions>
@@ -237,7 +237,7 @@
                 </goals>
                 <configuration>
                   <includeScope>runtime</includeScope>
-                  <outputDirectory>/Users/sudhanyasudunagunta/Desktop/repos/executable-jar-with-maven-example/target/executable-jar-with-maven-example-0.8.10-SNAPSHOT-manual.lib</outputDirectory>
+                  <outputDirectory>/Users/sudhanyasudunagunta/Desktop/repos/executable-jar/target/executable-jar-0.8.10-SNAPSHOT-manual.lib</outputDirectory>
                 </configuration>
               </execution>
             </executions>
@@ -264,7 +264,7 @@
                   <archive>
                     <manifest>
                       <addClasspath>true</addClasspath>
-                      <classpathPrefix>executable-jar-with-maven-example-0.8.10-SNAPSHOT-manual.lib/</classpathPrefix>
+                      <classpathPrefix>executable-jar-0.8.10-SNAPSHOT-manual.lib/</classpathPrefix>
                       <mainClass>com.github.sid.example.Main</mainClass>
                     </manifest>
                   </archive>

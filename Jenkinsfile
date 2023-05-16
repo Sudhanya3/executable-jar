@@ -34,5 +34,10 @@ pipeline {
                 sh 'mvn clean package -X'
             }
         }
+        stage ('Building a docker image') {
+            steps {
+                sh 'docker build .'
+            }
+        }
     }   
 }
