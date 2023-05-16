@@ -12,5 +12,4 @@ RUN mvn -f /home/app/pom.xml clean package
 FROM openjdk:20-ea-jdk-oraclelinux7
 WORKDIR /adevguide
 COPY --from=maven /home/app/target/*.jar /usr/local/lib/demo.jar
-EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/usr/local/lib/demo.jar"]
