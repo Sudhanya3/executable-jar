@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        dockerfile true
-    }
+    agent any
     tools {
         maven 'Maven 3.9.1'
         jdk 'jdk20'
@@ -18,7 +16,7 @@ pipeline {
         }
         stage ('Checkout') {
             steps {
-                git credentialsId: 'github-password', url: 'https://github.com/jinahya/executable-jar-with-maven-example.git'
+                git credentialsId: 'github-password', url: 'https://github.com/Sudhanya3/executable-jar.git/'
                 sh "ls -lart ./*"
             }
         }
