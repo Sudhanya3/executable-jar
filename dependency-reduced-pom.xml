@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.jinahya</groupId>
+  <groupId>com.github.sid</groupId>
   <artifactId>executable-jar-with-maven-example</artifactId>
   <name>${project.artifactId}</name>
   <version>0.8.10-SNAPSHOT</version>
   <description>An example for generating executable jar files with dependencies</description>
-  <url>https://github.com/jinahya/${project.artifactId}</url>
+  <url>https://github.com/sid/${project.artifactId}</url>
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>https://github.com/jinahya/${project.artifactId}/issues</url>
+    <url>https://github.com/sid/${project.artifactId}/issues</url>
   </issueManagement>
   <scm>
-    <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
-    <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
-    <url>https://github.com/jinahya/${project.artifactId}</url>
+    <connection>scm:git:git@github.com:sid/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git@github.com:sid/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/sid/${project.artifactId}</url>
   </scm>
   <build>
     <pluginManagement>
@@ -125,7 +125,7 @@
                 <configuration>
                   <archive>
                     <manifest>
-                      <mainClass>com.github.jinahya.example.Main</mainClass>
+                      <mainClass>com.github.sid.example.Main</mainClass>
                     </manifest>
                   </archive>
                   <descriptorRefs>
@@ -137,7 +137,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>com.github.jinahya.example.Main</mainClass>
+                  <mainClass>com.github.sid.example.Main</mainClass>
                 </manifest>
               </archive>
               <descriptorRefs>
@@ -163,7 +163,7 @@
                   <goal>one-jar</goal>
                 </goals>
                 <configuration>
-                  <mainClass>com.github.jinahya.example.Main</mainClass>
+                  <mainClass>com.github.sid.example.Main</mainClass>
                   <attachToBuild>true</attachToBuild>
                   <filename>executable-jar-with-maven-example-0.8.10-SNAPSHOT-onejar.jar</filename>
                 </configuration>
@@ -189,7 +189,7 @@
                   <shadedArtifactAttached>true</shadedArtifactAttached>
                   <transformers>
                     <transformer>
-                      <mainClass>com.github.jinahya.example.Main</mainClass>
+                      <mainClass>com.github.sid.example.Main</mainClass>
                     </transformer>
                   </transformers>
                 </configuration>
@@ -214,7 +214,7 @@
                 </goals>
                 <configuration>
                   <classifier>spring-boot</classifier>
-                  <mainClass>com.github.jinahya.example.Main</mainClass>
+                  <mainClass>com.github.sid.example.Main</mainClass>
                 </configuration>
               </execution>
             </executions>
@@ -265,7 +265,7 @@
                     <manifest>
                       <addClasspath>true</addClasspath>
                       <classpathPrefix>executable-jar-with-maven-example-0.8.10-SNAPSHOT-manual.lib/</classpathPrefix>
-                      <mainClass>com.github.jinahya.example.Main</mainClass>
+                      <mainClass>com.github.sid.example.Main</mainClass>
                     </manifest>
                   </archive>
                 </configuration>
@@ -303,7 +303,7 @@
   <properties>
     <maven.compiler.testSource>${maven.compiler.source}</maven.compiler.testSource>
     <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-    <mainClass>com.github.jinahya.example.Main</mainClass>
+    <mainClass>com.github.sid.example.Main</mainClass>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -3,24 +3,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.github.jinahya</groupId>
+  <groupId>com.github.sid</groupId>
   <artifactId>executable-jar-with-maven-example</artifactId>
   <version>0.8.10-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
   <description>An example for generating executable jar files with dependencies</description>
-  <url>https://github.com/jinahya/${project.artifactId}</url>
+  <url>https://github.com/sid/${project.artifactId}</url>
 
   <scm>
-    <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
-    <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
-    <url>https://github.com/jinahya/${project.artifactId}</url>
+    <connection>scm:git:git@github.com:sid/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git@github.com:sid/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/sid/${project.artifactId}</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>https://github.com/jinahya/${project.artifactId}/issues</url>
+    <url>https://github.com/sid/${project.artifactId}/issues</url>
   </issueManagement>
 
   <properties>
@@ -30,7 +30,7 @@
     <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
     <maven.compiler.testSource>${maven.compiler.source}</maven.compiler.testSource>
     <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
-    <mainClass>com.github.jinahya.example.Main</mainClass>
+    <mainClass>com.github.sid.example.Main</mainClass>
   </properties>
 
   <dependencies>
