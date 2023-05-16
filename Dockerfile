@@ -1,7 +1,7 @@
 #
 # Build Stage
 #
-FROM eclipse-temurin:11-jdk-alpine as maven
+FROM maven:3.9.1-eclipse-temurin-11 AS maven
 COPY pom.xml /home/app/
 COPY src /home/app/src
 RUN mvn -f /home/app/pom.xml clean package
