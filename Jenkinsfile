@@ -35,7 +35,7 @@ pipeline {
         }
         stage ('Building a docker image') {
             steps {
-                sh 'docker build .'
+                sh 'cat Dockerfile'
             }
         }
     }   
