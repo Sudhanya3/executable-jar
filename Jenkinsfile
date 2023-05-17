@@ -3,7 +3,7 @@ pipeline {
     tools {
         maven 'Maven 3.9.1'
         jdk 'jdk20'
-        dockerTool 'docker'
+        docker 'docker'
         
     }
     stages {
@@ -13,7 +13,7 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                     echo "PATH = ${PATH}"
                     pwd
-                    ls -alR
+                    ls -al
                 '''
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 git credentialsId: 'github-password', url: 'https://github.com/Sudhanya3/executable-jar.git/'
                 sh '''
-                ls -alR
+                ls -al
                 pwd
                 '''
             }
@@ -30,10 +30,10 @@ pipeline {
         stage ('Build') {
             steps {
                 sh '''
-                ls -alR
+                ls -al
                 pwd
                 mvn clean install -X
-                ls -alR
+                ls -al
                 pwd
                 '''
             }
