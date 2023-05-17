@@ -51,11 +51,10 @@ pipeline {
 
         //     }
         // }
-    //     stage ('Building a docker image') {
+        //  stage ('Building a docker image') {
     //         steps {
     //             sh 'pwd'
     //         }
     //     }
-    // }   
+    }   
 }
-
