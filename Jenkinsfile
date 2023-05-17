@@ -19,7 +19,7 @@ pipeline {
         }
         stage ('Checkout') {
             steps {
-                git credentialsId: 'github-password', url: 'https://github.com/Sudhanya3/executable-jar.git/'
+                git credentialsId: 'github-password', url: 'https://github.com/Sudhanya3/executable-jar.git'
                 checkout scmGit(branches: [[name: '*/main']], extensions: [localBranch('main')], userRemoteConfigs: [[credentialsId: 'github-password', url: 'https://github.com/Sudhanya3/executable-jar.git']])
                 sh '''
                 ls -al
@@ -43,10 +43,10 @@ pipeline {
         stage ('Creating Jar') {
             steps {
                 sh '''
-                ls -alR
+                ls -al
                 pwd
                 mvn clean package -X                
-                ls -alR
+                ls -al
                 pwd
                 '''
 
@@ -55,7 +55,8 @@ pipeline {
          stage ('Building a docker image') {
             steps {
                 sh '''
-                docker build .
+                which docker
+                docker version
                 pwd
                 '''
             }
