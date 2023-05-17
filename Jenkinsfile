@@ -40,22 +40,25 @@ pipeline {
             }
         }
         
-        // stage ('Creating Jar') {
-        //     steps {
-        //         sh '''
-        //         ls -alR
-        //         pwd
-        //         mvn clean package -X                
-        //         ls -alR
-        //         pwd
-        //         '''
+        stage ('Creating Jar') {
+            steps {
+                sh '''
+                ls -alR
+                pwd
+                mvn clean package -X                
+                ls -alR
+                pwd
+                '''
 
-        //     }
-        // }
-        //  stage ('Building a docker image') {
-    //         steps {
-    //             sh 'pwd'
-    //         }
-    //     }
+            }
+        }
+         stage ('Building a docker image') {
+            steps {
+                sh '''
+                docker build .
+                pwd
+                '''
+            }
+        }
     }   
 }
