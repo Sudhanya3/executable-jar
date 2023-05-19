@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh '''
                     echo "M2_HOME = ${M2_HOME}"
-                    echo "PATH = ${PATH}"
+                    echo "JAVA_HOME = ${JAVA_HOME}"
                     pwd
                     ls -al
                 '''
@@ -19,8 +19,8 @@ pipeline {
         }
         stage ('Checkout') {
             steps {
-                git credentialsId: 'github-password', url: 'https://github.com/Sudhanya3/executable-jar.git'
-                checkout scmGit(branches: [[name: '*/main']], extensions: [localBranch('main')], userRemoteConfigs: [[credentialsId: 'github-password', url: 'https://github.com/Sudhanya3/executable-jar.git']])
+                git credentialsId: 'github-auth', url: 'https://github.com/Sudhanya3/executable-jar.git'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [localBranch('main')], userRemoteConfigs: [[credentialsId: 'github-auth', url: 'https://github.com/Sudhanya3/executable-jar.git']])
                 sh '''
                 ls -al
                 pwd
