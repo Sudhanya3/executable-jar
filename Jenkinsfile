@@ -19,8 +19,7 @@ pipeline {
         }
         stage ('Checkout') {
             steps {
-                git credentialsId: 'github-auth', url: 'https://github.com/Sudhanya3/executable-jar.git'
-                checkout scmGit(branches: [[name: '*/main']], extensions: [localBranch('main')], userRemoteConfigs: [[credentialsId: 'github-auth', url: 'https://github.com/Sudhanya3/executable-jar.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-auth', url: 'https://github.com/Sudhanya3/executable-jar.git']])
                 sh '''
                 ls -al
                 pwd
