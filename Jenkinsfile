@@ -46,10 +46,20 @@ pipeline {
          stage ('Building a docker image') {
             steps {
                 sh '''
-                docker version
                 docker build -t java-maven.jar .
+                pwd
+                ls
                 '''
             }
         }
+        stage ('Running a docker image') {
+            steps {
+                sh '''
+                docker run -p 8081:8081 java-maven.jar
+                pwd
+                '''
+            }
+        }
+        
     }   
 }
