@@ -54,9 +54,8 @@ pipeline {
          stage ('Building a docker image') {
             steps {
                 sh '''
-                which docker
                 docker version
-                pwd
+                ls
                 '''
             }
         }
