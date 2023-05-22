@@ -12,29 +12,23 @@ pipeline {
                 sh '''
                     echo "M2_HOME = ${M2_HOME}"
                     echo "JAVA_HOME = ${JAVA_HOME}"
-                    pwd
-                    ls -al
+                    
                 '''
             }
         }
         stage ('Checkout') {
             steps {
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-auth', url: 'https://github.com/Sudhanya3/executable-jar.git']])
-                sh '''
-                ls -al
-                pwd
-                '''
+                
             }
         }
 
         stage ('Build') {
             steps {
                 sh '''
-                ls -al
-                pwd
+                
                 mvn clean install -X
-                ls -al
-                pwd
+                
                 '''
             }
         }
@@ -42,11 +36,9 @@ pipeline {
         stage ('Creating Jar') {
             steps {
                 sh '''
-                ls -al
-                pwd
+                
                 mvn clean package -X                
-                ls -al
-                pwd
+                
                 '''
 
             }
@@ -55,7 +47,7 @@ pipeline {
             steps {
                 sh '''
                 docker version
-                ls
+                docker build -t java-maven.jar .
                 '''
             }
         }
