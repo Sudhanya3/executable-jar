@@ -46,7 +46,7 @@ pipeline {
          stage ('Building a docker image') {
             steps {
                 sh '''
-                docker build -t java-maven.jar .
+                docker build -t java-maven .
                 pwd
                 ls
                 '''
@@ -55,7 +55,7 @@ pipeline {
         stage ('Running a docker image') {
             steps {
                 sh '''
-                docker run -p 8080:8080 -p 50000:50000 --restart=on-failure -d -v jenkins_home:/var/jenkins_home java-maven.jar
+                docker run -p 8080:8080 -p 50000:50000 --restart=on-failure -d -v jenkins_home:/var/jenkins_home java-maven
                 pwd
                 ls
                 '''
@@ -64,11 +64,10 @@ pipeline {
         stage ('Push image to docker hub') {
             steps {
                 withCredentials([usernameColonPassword(credentialsId: 'dockerhub-auth', variable: 'dockerhub')]) {
-                // some block
-                }
                 sh '''
-                 ls
-                 pwd
+                docker push java-maven
+                pwd
+                ls
                 '''
             }
         }
