@@ -65,7 +65,7 @@ pipeline {
             steps {
                 withCredentials([usernameColonPassword(credentialsId: 'dockerhub-auth', variable: 'dockerhub')]) {
                 sh '''
-                docker push java-maven
+                docker images
                 pwd
                 ls
                 '''
