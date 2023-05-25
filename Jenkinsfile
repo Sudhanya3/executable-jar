@@ -69,8 +69,8 @@ pipeline {
                 pwd
                 ls
                 '''
+                }
             }
         }
-        
     }   
 }
