@@ -74,8 +74,9 @@ pipeline {
         stage ('Push image to docker hub') {
             steps {
                 sh '''
-                docker push java-maven
-                ls
+                docker tag java-maven $DOCKERHUB_CREDENTIALS_USR/java-maven
+                docker push $DOCKERHUB_CREDENTIALS_USR/java-maven
+                docker images
                 '''
             
             }
