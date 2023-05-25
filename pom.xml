@@ -303,7 +303,7 @@
                     <manifest>
                       <addClasspath>true</addClasspath>
                       <classpathPrefix>${project.build.finalName}-manual.lib/</classpathPrefix>
-                      <mainClass>${mainClass}</mainClass>
+                      <mainClass>com.github.sid.example.Main</mainClass>
                     </manifest>
                   </archive>
                 </configuration>
