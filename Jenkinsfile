@@ -77,7 +77,7 @@ pipeline {
                 docker push java-maven
                 ls
                 '''
-                }
+            
             }
         }
     }   
