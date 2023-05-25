@@ -76,7 +76,7 @@ pipeline {
                 sh '''
                 docker tag java-maven $DOCKERHUB_CREDENTIALS_USR/java-maven
                 docker push $DOCKERHUB_CREDENTIALS_USR/java-maven
-                docker images
+                docker ps
                 '''
             
             }
