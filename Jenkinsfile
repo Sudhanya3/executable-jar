@@ -3,8 +3,10 @@ pipeline {
     tools {
         maven 'Maven 3.9.1'
         jdk 'jdk20'
-        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
-        
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'     
+    }
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-auth')
     }
     stages {
         stage ('Initialize') {
@@ -61,12 +63,18 @@ pipeline {
                 '''
             }
         }
+        stage ('Logging into Docker hub') {
+            steps {
+                sh '''
+                echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
+                pwd
+                '''
+            }
+        }
         stage ('Push image to docker hub') {
             steps {
-                withCredentials([usernameColonPassword(credentialsId: 'dockerhub-auth', variable: 'dockerhub')]) {
                 sh '''
-                docker images
-                pwd
+                docker push java-maven
                 ls
                 '''
                 }
