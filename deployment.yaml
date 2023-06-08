@@ -17,7 +17,7 @@ spec:
         app: java-maven-app
     spec:
       containers:
-       —name: java-app
-          image: sudhanya03/java-maven
+       —name: java-maven
+          image: sudhanya03/java-maven:latest
           ports:
            —containerPort: 3000

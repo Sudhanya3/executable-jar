@@ -45,6 +45,7 @@ pipeline {
 
             }
         }
+        
          stage ('Building a docker image') {
             steps {
                 sh '''
@@ -78,7 +79,14 @@ pipeline {
                 docker push $DOCKERHUB_CREDENTIALS_USR/java-maven
                 docker ps
                 '''
-            
+            }
+        }
+        stage ('Deploying container to repository') {
+            steps {
+                sh '''
+                kubectl apply -f deployment.yaml
+                kubetl get deployments
+                '''
             }
         }
     }   
