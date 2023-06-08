@@ -84,6 +84,7 @@ pipeline {
         stage ('Deploying container to repository') {
             steps {
                 sh '''
+                kubectl version
                 kubectl apply -f deployment.yaml
                 kubetl get deployments
                 '''
