@@ -1,23 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: java-maven-deployment
+  name: java-deployment
   labels:
-    app: java-maven-app
+    app: java
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: java-maven-app
-  replicas: 2
-  strategy:
-    type: RollingUpdate
+      app: java
   template:
     metadata:
       labels:
-        app: java-maven-app
+        app: java
     spec:
       containers:
-       —name: java-maven
-          image: sudhanya03/java-maven:latest
+        - name: java-maven
+          image: java-maven
           ports:
-           —containerPort: 3000
+            - containerPort: 80
