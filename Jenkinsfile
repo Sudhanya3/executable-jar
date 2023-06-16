@@ -83,11 +83,11 @@ pipeline {
         }
         stage ('Deploying container to repository') {
             steps {
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubeconfig', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://127.0.0.1:49836') {
                 sh '''
                 kubectl version
-                kubectl apply -f deployment.yaml
-                kubetl get deployments
                 '''
+                }
             }
         }
     }   
