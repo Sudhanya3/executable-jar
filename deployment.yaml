@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: java-maven
-          image: java-maven
+          image: sudhanya03/java-maven:latest
           ports:
             - containerPort: 80
