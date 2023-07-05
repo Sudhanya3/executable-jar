@@ -81,12 +81,12 @@ pipeline {
                 '''
             }
         }
-        stage ('Deploying container to repository') {
+        stage ('Installing kubectl') {
             steps {
-                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubeconfig', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://127.0.0.1:49836') {
-                sh '''
-                kubectl version
-                '''
+                withKubeConfig([credentialsId: 'kubeconfig']) {
+                sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
+                sh 'chmod u+x ./kubectl'  
+                sh './kubectl get pods'
                 }
             }
         }
