@@ -84,7 +84,7 @@ pipeline {
         stage ('kubectl') {
             steps {
                 sh '''
-                cd ~/.local/bin/kubectl
+                vi ~/.local/bin/kubectl
                 '''
                 
             }
