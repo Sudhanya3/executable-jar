@@ -84,7 +84,6 @@ pipeline {
         stage ('kubectl') {
             steps {
                 sh '''
-                ./kubectl version
                 ./kubectl help
                 '''
                 
