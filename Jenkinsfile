@@ -15,7 +15,6 @@ pipeline {
                 sh '''
                     echo "M2_HOME = ${M2_HOME}"
                     echo "JAVA_HOME = ${JAVA_HOME}"
-                    which kubectl
                 '''
             }
         }
@@ -85,8 +84,8 @@ pipeline {
         stage ('kubectl') {
             steps {
                 sh '''
-                kubectl version
-                kubectl help
+                ./kubectl version
+                ./kubectl help
                 '''
                 
             }
