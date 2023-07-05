@@ -3,7 +3,8 @@ pipeline {
     tools {
         maven 'Maven 3.9.1'
         jdk 'jdk20'
-        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'     
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
+        kubectl 'kubectl'     
     }
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-auth')
