@@ -15,7 +15,7 @@ pipeline {
                 sh '''
                     echo "M2_HOME = ${M2_HOME}"
                     echo "JAVA_HOME = ${JAVA_HOME}"
-                    
+                    which kubectl
                 '''
             }
         }
@@ -84,9 +84,11 @@ pipeline {
         }
         stage ('kubectl') {
             steps {
-                withKubeConfig([credentialsId: 'kubeconfig']) {
-                sh 'kubectl get pods'
-                }
+                sh '''
+                kubectl version
+                kubectl help
+                '''
+                
             }
         }
     }   
