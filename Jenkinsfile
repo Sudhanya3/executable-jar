@@ -84,6 +84,7 @@ pipeline {
         stage ('kubectl') {
             steps {
                 sh '''
+                echo "$PATH"
                 kubectl help
                 '''
                 
